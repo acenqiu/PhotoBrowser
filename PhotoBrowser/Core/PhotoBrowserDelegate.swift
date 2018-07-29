@@ -33,7 +33,7 @@ public protocol PhotoBrowserDelegate: class {
     func photoBrowser(_ photoBrowser: PhotoBrowser, localImageForIndex index: Int) -> UIImage?
 
     /// 长按时回调。可选
-    func photoBrowser(_ photoBrowser: PhotoBrowser, didLongPressForIndex index: Int, image: UIImage)
+    func photoBrowser(_ photoBrowser: PhotoBrowser, didLongPressForIndex index: Int, image: UIImage, gestureRecognizer: UIGestureRecognizer)
 
     /// 即将关闭图片浏览器时回调
     /// - parameter index: 即将关闭时，正在显示的图片序号
@@ -57,7 +57,7 @@ public extension PhotoBrowserDelegate {
 
     func photoBrowser(_ photoBrowser: PhotoBrowser, localImageForIndex index: Int) -> UIImage? { return nil }
 
-    func photoBrowser(_ photoBrowser: PhotoBrowser, didLongPressForIndex index: Int, image: UIImage) {}
+    func photoBrowser(_ photoBrowser: PhotoBrowser, didLongPressForIndex index: Int, image: UIImage, gestureRecognizer: UIGestureRecognizer) {}
 
     func photoBrowser(_ photoBrowser: PhotoBrowser, willDismissWithIndex index: Int, image: UIImage?) {}
 

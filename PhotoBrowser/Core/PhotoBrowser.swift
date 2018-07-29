@@ -574,9 +574,9 @@ extension PhotoBrowser: PhotoBrowserCellDelegate {
         coverStatusBar(alpha >= 1.0)
     }
 
-    public func photoBrowserCell(_ cell: PhotoBrowserCell, didLongPressWith image: UIImage) {
+    public func photoBrowserCell(_ cell: PhotoBrowserCell, didLongPressWith image: UIImage, gestureRecognizer: UIGestureRecognizer) {
         if let indexPath = collectionView.indexPath(for: cell) {
-            photoBrowserDelegate?.photoBrowser(self, didLongPressForIndex: indexPath.item, image: image)
+            photoBrowserDelegate?.photoBrowser(self, didLongPressForIndex: indexPath.item, image: image, gestureRecognizer: gestureRecognizer)
         }
     }
 
